@@ -1,10 +1,12 @@
+package main;
+
 import java.util.ArrayList;
-import java.util.Arrays;
 import java.util.Scanner;
 
 public class Main {
     public static void main(String[] args) {
-        CommandLineInterpreter cli = new CommandLineInterpreter();
+        CommandLineInterpreter cli = new CommandLineInterpreter(); // cd C:\Users\hp\Desktop\FCAI\Algorithms\"assignment 1"\"part A"
+        //System.out.println(cli.cleanPath("D:\\Java projects\\simple calculator\\.."));
         Scanner scanner = new Scanner(System.in);
         while(cli.isActive()) {
             System.out.print(cli.pwd() + "~ ");
@@ -17,8 +19,20 @@ public class Main {
                 case "cd":
                     if(params.size() == 1)
                         cli.cd(params.get(0));
-//                    else if(params.size() > 1)
-//                        System.out.println("Invalid args, only 1 arg is needed");
+                    else if(params.size() > 1)
+                        System.out.println(command + ": Invalid arguments");
+                    break;
+                case "mkdir":
+                    if(params.size() == 1)
+                        cli.mkdir(params.get(0));
+                    else
+                        System.out.println(command + ": Invalid arguments");
+                    break;
+                case "rmdir":
+                    if(params.size() == 1)
+                        cli.rmdir(params.get(0));
+                    else
+                        System.out.println(command + ": Invalid arguments");
                     break;
                 case "exit()":
                     cli.exit(); break;
