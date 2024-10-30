@@ -4,10 +4,16 @@ import java.util.Arrays;
 
 public class CommandLineInterpreter {
     private File currentDirectory;
+    private boolean active;
 
     CommandLineInterpreter() {
         // setting workingDirectory to the working directory at the time the application started
         currentDirectory = new File(System.getProperty("user.dir"));
+        active = true;
+    }
+
+    public boolean isActive() {
+        return active;
     }
 
     public String pwd(){
@@ -15,8 +21,8 @@ public class CommandLineInterpreter {
     }
 
     public void cd(String path){
-        // return a clean absolute path
-        if(!path.equals(this.pwd()) && path.charAt(1) != ':') { // when the given path is relative or the equal to the current dir
+        // getting a clean absolute path
+        if(!path.equals(this.pwd()) && path.charAt(1) != ':') { // when the given path is not absolute or the equal to the current dir
             // splitting the working directory path into an ArrayList
             ArrayList<String> currentPath = new ArrayList<>(Arrays.asList(this.pwd().split("\\\\")));
             // splitting the given path into an array
@@ -40,6 +46,7 @@ public class CommandLineInterpreter {
         }
         else{
             System.err.println("cd: Path \'" + newDirectory.getAbsolutePath() + "\' does not exist");
+            return;
         }
     }
 
@@ -58,5 +65,9 @@ public class CommandLineInterpreter {
             dirToReomve.delete();
         else
             System.err.println("rmdir: Item \'" + dirToReomve.getAbsolutePath() + "\' does not exist");
+    }
+
+    public void exit(){
+        active = false;
     }
 }
