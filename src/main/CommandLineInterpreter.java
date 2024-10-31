@@ -7,6 +7,7 @@ import java.nio.file.Path;
 import java.nio.file.Paths;
 import java.nio.file.StandardCopyOption;
 import java.util.ArrayList;
+import java.util.List;
 
 public class CommandLineInterpreter {
     private File currentDirectory;
@@ -65,13 +66,22 @@ public class CommandLineInterpreter {
 
     public void mv(ArrayList<String> paths){
         Path destination = Paths.get(paths.get(paths.size()-1));
+        if(!destination.toFile().exists()){
+            System.out.println("mv: Destination \'" + destination.toString() + "\' does not exist");
+            return;
+        }
         boolean isDirectory = destination.toFile().isDirectory();
+
         if(!isDirectory && paths.size()>2) {
             System.out.println("mv: Destination \'" + destination.toString() + "\' is not a directory");
             return;
         }
         for (int i = 0; i < paths.size() - 1; i++) {
             Path sourcePath = Paths.get(paths.get(i));
+            if(!sourcePath.toFile().exists()) {
+                System.out.println("mv: Source \'" + sourcePath.toString() + "\' does not exist");
+                return;
+            }
             Path destinationPath = isDirectory ? destination.resolve(sourcePath.getFileName()) : destination;
 
             try {
@@ -80,6 +90,21 @@ public class CommandLineInterpreter {
                 throw new RuntimeException(e);
             }
         }
+    }
+
+    public String cat(ArrayList<String> paths){
+        StringBuilder content = new StringBuilder();
+        for (String path : paths) {
+            try {
+                List<String> lines = Files.readAllLines(Paths.get(path));
+                for (String line : lines) {
+                    content.append(line).append("\n");
+                }
+            } catch (IOException e) {
+                System.err.println("Error reading file: " + path + ". " + e.getMessage());
+            }
+        }
+        return content.toString();
     }
 
     public void exit(){

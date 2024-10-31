@@ -12,9 +12,9 @@ public class Main {
         Scanner scanner = new Scanner(System.in);
         while(cli.isActive()) {
             System.out.print(cli.pwd() + "~ ");
-            String input = scanner.nextLine();
-            String command = getCommand(input); // extracting the command
-            ArrayList<String> params = getParams(input);
+            String inputLine = scanner.nextLine();
+            String command = getCommand(inputLine); // extracting the command
+            ArrayList<String> params = getParams(inputLine);
             switch(command){
                 case "pwd":
                     System.out.println(cli.pwd()); break;
@@ -42,6 +42,18 @@ public class Main {
                         System.out.println(command + ": Invalid arguments");
                     else
                         cli.mv(params);
+                    break;
+                case "cat":
+                    if(params.isEmpty()){
+                        Scanner sc = new Scanner(System.in);
+                        String input = sc.nextLine();
+                        System.out.println(input);
+                        sc.close();
+                    }
+                    else{
+                        System.out.println(cli.cat(params));
+                    }
+                    break;
                 case "exit()":
                     cli.exit(); break;
                 default:
@@ -65,7 +77,6 @@ public class Main {
             if(line.charAt(i) == '\"')
                 isFolderName = !isFolderName;
             else if (line.charAt(i) == ' ' && !isFolderName) {
-                System.out.println(i);
                 params.add(line.substring(startIndex, i));
                 startIndex = i + 1;
             }
