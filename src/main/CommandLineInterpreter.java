@@ -110,4 +110,77 @@ public class CommandLineInterpreter {
     public void exit(){
         active = false;
     }
+
+    
+    public void ls(boolean a, boolean r){
+        Path dir = Paths.get(pwd());
+        try(Stream<Path> filesStream = Files.list(dir)){
+            if (a) {
+                List<Path> files = filesStream.filter((path -> a || !path.getFileName().toString().startsWith(".")))
+                        .collect(Collectors.toList());
+
+                if (r) {
+                    Collections.reverse(files);
+                }
+
+                // Print each file
+                for (Path file : files) {
+                    System.out.println(file.getFileName());
+                }
+            }
+            else{
+                List<Path> files = filesStream.collect(Collectors.toList());
+
+                if (r) {
+                    Collections.reverse(files);
+                }
+
+                // Print each file
+                for (Path file : files) {
+                    System.out.println(file.getFileName());
+                }
+            }
+
+        }
+        catch (IOException e){
+            System.out.println("Error listing files: " + e.getMessage());
+        }
+    }
+
+    public void rm(String targetName) {
+        String target = pwd() + "/" + targetName;
+        Path targetPath = Paths.get(target);
+
+        if (!Files.exists(targetPath)) {
+            System.out.println("File does not exist.");
+            return;
+        }
+
+        try {
+            if (Files.isDirectory(targetPath)) {
+                rmdir(target);
+            } else {
+                Files.delete(targetPath);
+                System.out.println("File deleted successfully.");
+            }
+        } catch (IOException e) {
+            System.out.println("Failed to delete: " + e.getMessage());
+        }
+    }
+
+    public void touch() {
+        File file = new File(pwd());
+        try {
+            if (file.exists()) {
+                file.setLastModified(System.currentTimeMillis());
+                System.out.println("File already exists.");
+            }
+            else {
+                file.createNewFile();
+                System.out.println("File created successfully.");
+            }
+        } catch (IOException e) {
+            System.out.println("Error creating file: " + e.getMessage());
+        }
+    }
 }
