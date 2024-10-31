@@ -1,7 +1,12 @@
 package main;
 
 import java.io.File;
+import java.io.IOException;
+import java.nio.file.Files;
 import java.nio.file.Path;
+import java.nio.file.Paths;
+import java.nio.file.StandardCopyOption;
+import java.util.ArrayList;
 
 public class CommandLineInterpreter {
     private File currentDirectory;
@@ -56,6 +61,25 @@ public class CommandLineInterpreter {
                 System.out.println("rmdir: Failed to remove \'"+ dirToRemove.getAbsolutePath() +"\', directory not empty\n");
         else
             System.out.println("rmdir: Item \'" + dirToRemove.getAbsolutePath() + "\' does not exist");
+    }
+
+    public void mv(ArrayList<String> paths){
+        Path destination = Paths.get(paths.get(paths.size()-1));
+        boolean isDirectory = destination.toFile().isDirectory();
+        if(!isDirectory && paths.size()>2) {
+            System.out.println("mv: Destination \'" + destination.toString() + "\' is not a directory");
+            return;
+        }
+        for (int i = 0; i < paths.size() - 1; i++) {
+            Path sourcePath = Paths.get(paths.get(i));
+            Path destinationPath = isDirectory ? destination.resolve(sourcePath.getFileName()) : destination;
+
+            try {
+                Files.move(sourcePath, destinationPath, StandardCopyOption.REPLACE_EXISTING);
+            } catch (IOException e) {
+                throw new RuntimeException(e);
+            }
+        }
     }
 
     public void exit(){

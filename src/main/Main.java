@@ -1,12 +1,14 @@
 package main;
 
 import java.util.ArrayList;
+import java.util.Arrays;
 import java.util.Scanner;
 
 public class Main {
     public static void main(String[] args) {
         CommandLineInterpreter cli = new CommandLineInterpreter(); // cd C:\Users\hp\Desktop\FCAI\Algorithms\"assignment 1"\"part A"
-        //System.out.println(cli.cleanPath("D:\\Java projects\\simple calculator\\.."));
+//        ArrayList<String> p = new ArrayList<>(Arrays.asList("nfolder", "folder"));
+//        cli.mv(p);
         Scanner scanner = new Scanner(System.in);
         while(cli.isActive()) {
             System.out.print(cli.pwd() + "~ ");
@@ -34,6 +36,12 @@ public class Main {
                     else
                         System.out.println(command + ": Invalid arguments");
                     break;
+
+                case "mv":
+                    if(params.size() < 2)
+                        System.out.println(command + ": Invalid arguments");
+                    else
+                        cli.mv(params);
                 case "exit()":
                     cli.exit(); break;
                 default:
