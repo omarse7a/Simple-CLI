@@ -43,6 +43,7 @@ public class Main {
                     else
                         cli.mv(params);
                     break;
+
                 case "cat":
                     if(params.isEmpty()){
                         Scanner sc = new Scanner(System.in);
@@ -52,6 +53,45 @@ public class Main {
                     }
                     else{
                         System.out.println(cli.cat(params));
+                    }
+                    break;
+
+                case "ls":
+                    if(params.isEmpty()){
+                        cli.ls(false, false);
+                    }
+                    else if (params.size() == 1 && params.get(0).equals("-a")) {
+                        cli.ls(true, false);
+                    }
+                    else if (params.size() == 1 && params.get(0).equals("-r")) {
+                        cli.ls(false, true);
+                    }
+                    else if (params.size() == 2 && params.get(0).equals("-a") && params.get(1).equals("-r")){
+                        cli.ls(true, true);
+                    }
+                    else if (params.size() == 2 && params.get(0).equals("-r") && params.get(1).equals("-a")){
+                        cli.ls(true, true);
+                    }
+                    else{
+                        System.out.println(command + ": Invalid arguments");
+                    }
+                    break;
+
+                case "touch":
+                    if (params.isEmpty()){
+                        System.out.println(": Invalid arguments");
+                    }
+                    else{
+//                        System.out.println(params.get(0));
+                        cli.touch(params.get(0));
+                    }
+                    break;
+                case "rm":
+                    if (params.isEmpty()){
+                        System.out.println(": Invalid arguments");
+                    }
+                    else{
+                        cli.rm(params.get(0));
                     }
                     break;
                 case "exit()":

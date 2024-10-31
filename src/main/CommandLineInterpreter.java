@@ -135,7 +135,8 @@ public class CommandLineInterpreter {
                 }
             }
             else{
-                List<Path> files = filesStream.collect(Collectors.toList());
+                List<Path> files = filesStream.filter(path -> a ||!path.getFileName().toString().startsWith("."))
+                        .collect(Collectors.toList());
 
                 if (r) {
                     Collections.reverse(files);
@@ -174,8 +175,9 @@ public class CommandLineInterpreter {
         }
     }
 
-    public void touch() {
-        File file = new File(pwd());
+    public void touch(String targetName) {
+        String target = pwd() + "/" + targetName;
+        File file = new File(target);
         try {
             if (file.exists()) {
                 file.setLastModified(System.currentTimeMillis());
