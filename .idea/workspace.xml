@@ -6,7 +6,6 @@
   <component name="ChangeListManager">
     <list default="true" id="1146135a-4435-4a5e-b46c-bc38525c9a33" name="Changes" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/CommandLineInterpreter.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/CommandLineInterpreter.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/Main.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/Main.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/test/CommandLineInterpreterTest.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/CommandLineInterpreterTest.java" afterDir="false" />
     </list>
@@ -29,6 +28,7 @@
   <component name="HighlightingSettingsPerFile">
     <setting file="file://$PROJECT_DIR$/src/main/CommandLineInterpreter.java" root0="SKIP_INSPECTION" />
     <setting file="file://$PROJECT_DIR$/src/main/Main.java" root0="SKIP_INSPECTION" />
+    <setting file="file://$PROJECT_DIR$/src/test/CommandLineInterpreterTest.java" root0="SKIP_INSPECTION" />
   </component>
   <component name="ProjectColorInfo">{
   &quot;associatedIndex&quot;: 6
@@ -45,6 +45,9 @@
     "Downloaded.Files.Path.Enabled": "false",
     "JUnit.CommandLineInterpreterTest.cdTest.executor": "Run",
     "JUnit.CommandLineInterpreterTest.executor": "Run",
+    "JUnit.CommandLineInterpreterTest.mkdirTest.executor": "Run",
+    "JUnit.CommandLineInterpreterTest.pipeCommandTest.executor": "Run",
+    "JUnit.CommandLineInterpreterTest.touchTest.executor": "Run",
     "Repository.Attach.Annotations": "false",
     "Repository.Attach.JavaDocs": "false",
     "Repository.Attach.Sources": "false",
@@ -77,7 +80,7 @@
       <recent name="test" />
     </key>
   </component>
-  <component name="RunManager" selected="Application.Main">
+  <component name="RunManager" selected="JUnit.CommandLineInterpreterTest.pipeCommandTest">
     <configuration name="Main" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
       <option name="MAIN_CLASS_NAME" value="main.Main" />
       <module name="simple CLI" />
@@ -100,7 +103,7 @@
         <option name="Make" enabled="true" />
       </method>
     </configuration>
-    <configuration name="CommandLineInterpreterTest.cdTest" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
+    <configuration name="CommandLineInterpreterTest.mkdirTest" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
       <module name="simple CLI" />
       <extension name="coverage">
         <pattern>
@@ -110,7 +113,39 @@
       </extension>
       <option name="PACKAGE_NAME" value="test" />
       <option name="MAIN_CLASS_NAME" value="test.CommandLineInterpreterTest" />
-      <option name="METHOD_NAME" value="cdTest" />
+      <option name="METHOD_NAME" value="mkdirTest" />
+      <option name="TEST_OBJECT" value="method" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <configuration name="CommandLineInterpreterTest.pipeCommandTest" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
+      <module name="simple CLI" />
+      <extension name="coverage">
+        <pattern>
+          <option name="PATTERN" value="test.*" />
+          <option name="ENABLED" value="true" />
+        </pattern>
+      </extension>
+      <option name="PACKAGE_NAME" value="test" />
+      <option name="MAIN_CLASS_NAME" value="test.CommandLineInterpreterTest" />
+      <option name="METHOD_NAME" value="pipeCommandTest" />
+      <option name="TEST_OBJECT" value="method" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <configuration name="CommandLineInterpreterTest.touchTest" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
+      <module name="simple CLI" />
+      <extension name="coverage">
+        <pattern>
+          <option name="PATTERN" value="test.*" />
+          <option name="ENABLED" value="true" />
+        </pattern>
+      </extension>
+      <option name="PACKAGE_NAME" value="test" />
+      <option name="MAIN_CLASS_NAME" value="test.CommandLineInterpreterTest" />
+      <option name="METHOD_NAME" value="touchTest" />
       <option name="TEST_OBJECT" value="method" />
       <method v="2">
         <option name="Make" enabled="true" />
@@ -118,9 +153,11 @@
     </configuration>
     <recent_temporary>
       <list>
-        <item itemvalue="Application.Main" />
+        <item itemvalue="JUnit.CommandLineInterpreterTest.pipeCommandTest" />
         <item itemvalue="JUnit.CommandLineInterpreterTest" />
-        <item itemvalue="JUnit.CommandLineInterpreterTest.cdTest" />
+        <item itemvalue="JUnit.CommandLineInterpreterTest.touchTest" />
+        <item itemvalue="JUnit.CommandLineInterpreterTest.mkdirTest" />
+        <item itemvalue="Application.Main" />
       </list>
     </recent_temporary>
   </component>
@@ -155,6 +192,8 @@
       <workItem from="1730272797710" duration="2112000" />
       <workItem from="1730302331255" duration="24672000" />
       <workItem from="1730358645860" duration="16671000" />
+      <workItem from="1730443482995" duration="151000" />
+      <workItem from="1730452548113" duration="259000" />
     </task>
     <servers />
   </component>

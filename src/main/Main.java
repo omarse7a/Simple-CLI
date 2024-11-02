@@ -20,7 +20,7 @@ public class Main {
                     ArrayList<String> params = new ArrayList<>();
                     for(int j = i+1; j < command.length(); j++) {
                         if(!isConnector(components.get(j))) {
-                            params.add(components.get(j));
+                            params.add(removeQuotes(components.get(j)));
                             i++;
                         }
                         else
@@ -44,7 +44,7 @@ public class Main {
                         ArrayList<String> params = new ArrayList<>();
                         for(int j = i+1; j < command.length(); j++) {
                             if(!isConnector(components.get(j))) {
-                                params.add(components.get(j));
+                                params.add(removeQuotes(components.get(j)));
                                 i++;
                             }
                             else
@@ -111,7 +111,7 @@ public class Main {
                 break;
             case "cd":
                 if(args.size() == 1)
-                    cli.cd(removeQuotes(args.get(0)));
+                    cli.cd(args.get(0));
                 else if(args.size() > 1)
                     System.out.println(command + ": Invalid arguments");
                 break;
@@ -188,81 +188,3 @@ public class Main {
         return output;
     }
 }
-
-//            String command = getCommand(inputLine); // extracting the command
-//            ArrayList<String> params = getParams(inputLine);
-//            switch(command){
-//                case "pwd":
-//                    System.out.println(cli.pwd()); break;
-//                case "cd":
-//                    if(params.size() == 1)
-//                        cli.cd(params.get(0));
-//                    else if(params.size() > 1)
-//                        System.out.println(command + ": Invalid arguments");
-//                    break;
-//                case "mkdir":
-//                    if(params.size() == 1)
-//                        cli.mkdir(params.get(0));
-//                    else
-//                        System.out.println(command + ": Invalid arguments");
-//                    break;
-//                case "rmdir":
-//                    if(params.size() == 1)
-//                        cli.rmdir(params.get(0));
-//                    else
-//                        System.out.println(command + ": Invalid arguments");
-//                    break;
-//                case "mv":
-//                    if(params.size() < 2)
-//                        System.out.println(command + ": Invalid arguments");
-//                    else
-//                        cli.mv(params);
-//                    break;
-//
-//                case "cat":
-//                    System.out.println(cli.cat(params));
-//                    break;
-//
-//                case "ls":
-//                    if(params.isEmpty()){
-//                        cli.ls(false, false);
-//                    }
-//                    else if (params.size() == 1 && params.get(0).equals("-a")) {
-//                        cli.ls(true, false);
-//                    }
-//                    else if (params.size() == 1 && params.get(0).equals("-r")) {
-//                        cli.ls(false, true);
-//                    }
-//                    else if (params.size() == 2 && params.get(0).equals("-a") && params.get(1).equals("-r")){
-//                        cli.ls(true, true);
-//                    }
-//                    else if (params.size() == 2 && params.get(0).equals("-r") && params.get(1).equals("-a")){
-//                        cli.ls(true, true);
-//                    }
-//                    else{
-//                        System.out.println(command + ": Invalid arguments");
-//                    }
-//                    break;
-//
-//                case "touch":
-//                    if (params.isEmpty()){
-//                        System.out.println(command + ": Invalid arguments");
-//                    }
-//                    else{
-//                        cli.touch(params.get(0));
-//                    }
-//                    break;
-//                case "rm":
-//                    if (params.isEmpty()){
-//                        System.out.println(command + ": Invalid arguments");
-//                    }
-//                    else{
-//                        cli.rm(params.get(0));
-//                    }
-//                    break;
-//                case "exit()":
-//                    cli.exit(); break;
-//                default:
-//                    System.out.println(command + ": Command does not exist"); break;
-//            }
-//        }
