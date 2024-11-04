@@ -18,7 +18,7 @@ public class Main {
                 if(isCommand(components.get(i))) {
                     String command = components.get(i);
                     ArrayList<String> params = new ArrayList<>();
-                    for(int j = i+1; j < command.length(); j++) {
+                    for(int j = i+1; j < components.size(); j++) {
                         if(!isConnector(components.get(j))) {
                             params.add(removeQuotes(components.get(j)));
                             i++;
@@ -42,7 +42,7 @@ public class Main {
                     else{
                         String command = components.get(i+1);
                         ArrayList<String> params = new ArrayList<>();
-                        for(int j = i+1; j < command.length(); j++) {
+                        for(int j = i+1; j < components.size(); j++) {
                             if(!isConnector(components.get(j))) {
                                 params.add(removeQuotes(components.get(j)));
                                 i++;
@@ -88,7 +88,7 @@ public class Main {
     }
 
     public static boolean isCommand(String component) {
-        String[] validCommands = { "pwd", "cd", "ls", "mkdir", "rmdir", "touch", "mv", "rm", "cat"};
+        String[] validCommands = { "pwd", "cd", "ls", "mkdir", "rmdir", "touch", "mv", "rm", "cat", "exit()", "help()"};
         for(String command : validCommands) {
             if (command.equals(component))
                 return true;
