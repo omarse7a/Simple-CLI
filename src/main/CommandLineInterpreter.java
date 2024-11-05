@@ -58,12 +58,15 @@ public class CommandLineInterpreter {
     public void rmdir(String dirPath){
         Path path = currentDirectory.toPath().resolve(dirPath).normalize();
         File dirToRemove = path.toFile();
-        if(dirToRemove.exists())
+        if(dirToRemove.exists()) {
             dirToRemove.delete();
-            if(dirToRemove.exists())
-                System.out.println("rmdir: Failed to remove \'"+ dirToRemove.getAbsolutePath() +"\', directory not empty\n");
+            if (dirToRemove.exists())
+                System.out.println("rmdir: Failed to remove \'" + dirToRemove.getAbsolutePath() + "\', directory not empty\n");
+            else
+                System.out.println("Directory deleted: " + dirToRemove.getAbsolutePath());
+        }
         else
-            System.out.println("rmdir: Item \'" + dirToRemove.getAbsolutePath() + "\' does not exist");
+            System.out.println("rmdir: Directory \'" + dirToRemove.getAbsolutePath() + "\' does not exist");
     }
 
     public void mv(ArrayList<String> paths){
@@ -99,7 +102,7 @@ public class CommandLineInterpreter {
         // when no file paths are provided -> read from user input
         if (paths.isEmpty()) {
             Scanner sc = new Scanner(System.in);
-            System.out.println("Enter text to conactenate (type 'Q' to finish):");
+            System.out.println("Enter text (enter 'Q' to stop):");
             while (sc.hasNextLine()) {
                 String line = sc.nextLine();
                 if ("q".equalsIgnoreCase(line)) {

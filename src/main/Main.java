@@ -42,7 +42,7 @@ public class Main {
                     else{
                         String command = components.get(i+1);
                         ArrayList<String> params = new ArrayList<>();
-                        for(int j = i+1; j < components.size(); j++) {
+                        for(int j = i+2; j < components.size(); j++) {
                             if(!isConnector(components.get(j))) {
                                 params.add(removeQuotes(components.get(j)));
                                 i++;
@@ -50,6 +50,8 @@ public class Main {
                             else
                                 break;
                         }
+                        if(output.charAt(output.length()-1) == '\n')
+                            output = output.substring(0, output.length()-1);
                         output = executeCommand(cli, command, params, output);
                     }
                 }
@@ -99,7 +101,9 @@ public class Main {
     public static boolean isConnector(String component){
         return (component.equals(">") || component.equals(">>") || component.equals("|"));
     }
-
+// touch f1.txt
+// "..\LZW" > f1.txt
+// cat f1.txt | cd
     public static String executeCommand(CommandLineInterpreter cli, String command, ArrayList<String> args, String prevOutput) {
         if(!prevOutput.isBlank())
             args.add(prevOutput);

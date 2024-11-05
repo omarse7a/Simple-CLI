@@ -6,7 +6,11 @@
   <component name="ChangeListManager">
     <list default="true" id="1146135a-4435-4a5e-b46c-bc38525c9a33" name="Changes" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/folder1/f1.txt" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/folder1/f2.txt" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/CommandLineInterpreter.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/CommandLineInterpreter.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/Main.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/Main.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/test/CommandLineInterpreterTest.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/CommandLineInterpreterTest.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -42,10 +46,14 @@
   &quot;keyToString&quot;: {
     &quot;Application.Main.executor&quot;: &quot;Run&quot;,
     &quot;Downloaded.Files.Path.Enabled&quot;: &quot;false&quot;,
+    &quot;JUnit.CommandLineInterpreterTest.appendOutputTest.executor&quot;: &quot;Run&quot;,
+    &quot;JUnit.CommandLineInterpreterTest.catTest.executor&quot;: &quot;Run&quot;,
     &quot;JUnit.CommandLineInterpreterTest.cdTest.executor&quot;: &quot;Run&quot;,
     &quot;JUnit.CommandLineInterpreterTest.executor&quot;: &quot;Run&quot;,
     &quot;JUnit.CommandLineInterpreterTest.mkdirTest.executor&quot;: &quot;Run&quot;,
+    &quot;JUnit.CommandLineInterpreterTest.mvTest.executor&quot;: &quot;Run&quot;,
     &quot;JUnit.CommandLineInterpreterTest.pipeCommandTest.executor&quot;: &quot;Run&quot;,
+    &quot;JUnit.CommandLineInterpreterTest.rmdirTest.executor&quot;: &quot;Run&quot;,
     &quot;JUnit.CommandLineInterpreterTest.touchTest.executor&quot;: &quot;Run&quot;,
     &quot;Repository.Attach.Annotations&quot;: &quot;false&quot;,
     &quot;Repository.Attach.JavaDocs&quot;: &quot;false&quot;,
@@ -102,7 +110,7 @@
         <option name="Make" enabled="true" />
       </method>
     </configuration>
-    <configuration name="CommandLineInterpreterTest.mkdirTest" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
+    <configuration name="CommandLineInterpreterTest.catTest" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
       <module name="simple CLI" />
       <extension name="coverage">
         <pattern>
@@ -112,13 +120,13 @@
       </extension>
       <option name="PACKAGE_NAME" value="test" />
       <option name="MAIN_CLASS_NAME" value="test.CommandLineInterpreterTest" />
-      <option name="METHOD_NAME" value="mkdirTest" />
+      <option name="METHOD_NAME" value="catTest" />
       <option name="TEST_OBJECT" value="method" />
       <method v="2">
         <option name="Make" enabled="true" />
       </method>
     </configuration>
-    <configuration name="CommandLineInterpreterTest.pipeCommandTest" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
+    <configuration name="CommandLineInterpreterTest.mvTest" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
       <module name="simple CLI" />
       <extension name="coverage">
         <pattern>
@@ -128,13 +136,13 @@
       </extension>
       <option name="PACKAGE_NAME" value="test" />
       <option name="MAIN_CLASS_NAME" value="test.CommandLineInterpreterTest" />
-      <option name="METHOD_NAME" value="pipeCommandTest" />
+      <option name="METHOD_NAME" value="mvTest" />
       <option name="TEST_OBJECT" value="method" />
       <method v="2">
         <option name="Make" enabled="true" />
       </method>
     </configuration>
-    <configuration name="CommandLineInterpreterTest.touchTest" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
+    <configuration name="CommandLineInterpreterTest.rmdirTest" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
       <module name="simple CLI" />
       <extension name="coverage">
         <pattern>
@@ -144,7 +152,7 @@
       </extension>
       <option name="PACKAGE_NAME" value="test" />
       <option name="MAIN_CLASS_NAME" value="test.CommandLineInterpreterTest" />
-      <option name="METHOD_NAME" value="touchTest" />
+      <option name="METHOD_NAME" value="rmdirTest" />
       <option name="TEST_OBJECT" value="method" />
       <method v="2">
         <option name="Make" enabled="true" />
@@ -154,9 +162,9 @@
       <list>
         <item itemvalue="JUnit.CommandLineInterpreterTest" />
         <item itemvalue="Application.Main" />
-        <item itemvalue="JUnit.CommandLineInterpreterTest.pipeCommandTest" />
-        <item itemvalue="JUnit.CommandLineInterpreterTest.touchTest" />
-        <item itemvalue="JUnit.CommandLineInterpreterTest.mkdirTest" />
+        <item itemvalue="JUnit.CommandLineInterpreterTest.mvTest" />
+        <item itemvalue="JUnit.CommandLineInterpreterTest.rmdirTest" />
+        <item itemvalue="JUnit.CommandLineInterpreterTest.catTest" />
       </list>
     </recent_temporary>
   </component>
@@ -197,21 +205,13 @@
       <workItem from="1730632426337" duration="550000" />
       <workItem from="1730729270073" duration="1485000" />
       <workItem from="1730730870855" duration="30000" />
+      <workItem from="1730733238692" duration="2218000" />
+      <workItem from="1730752905764" duration="3763000" />
+      <workItem from="1730787872708" duration="79000" />
     </task>
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
     <option name="version" value="3" />
-  </component>
-  <component name="XDebuggerManager">
-    <breakpoint-manager>
-      <breakpoints>
-        <line-breakpoint enabled="true" type="java-line">
-          <url>file://$PROJECT_DIR$/src/main/Main.java</url>
-          <line>15</line>
-          <option name="timeStamp" value="2" />
-        </line-breakpoint>
-      </breakpoints>
-    </breakpoint-manager>
   </component>
 </project>
