@@ -5,9 +5,22 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="1146135a-4435-4a5e-b46c-bc38525c9a33" name="Changes" comment="">
+      <change afterPath="$PROJECT_DIR$/src/main/CommandInterpreter.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/CommandParser.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/commands/ActionCommand.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/commands/CdCommand.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/commands/Command.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/commands/LsCommand.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/commands/OperatorCommand.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/commands/OutputCommand.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/commands/PwdCommand.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/libraries/junit_jupiter.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/libraries/junit_jupiter.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/misc.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/misc.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/modules.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/modules.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/uiDesigner.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/uiDesigner.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/vcs.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/vcs.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/folder1/f1.txt" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/folder1/f2.txt" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/simple CLI.iml" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/CommandLineInterpreter.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/CommandLineInterpreter.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/Main.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/Main.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/test/CommandLineInterpreterTest.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/CommandLineInterpreterTest.java" afterDir="false" />
@@ -20,14 +33,32 @@
   <component name="FileTemplateManagerImpl">
     <option name="RECENT_TEMPLATES">
       <list>
-        <option value="Class" />
         <option value="JUnit5 Test Class" />
+        <option value="Interface" />
+        <option value="Class" />
       </list>
     </option>
   </component>
   <component name="Git.Settings">
+    <option name="RECENT_BRANCH_BY_REPOSITORY">
+      <map>
+        <entry key="$PROJECT_DIR$" value="main" />
+      </map>
+    </option>
     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
   </component>
+  <component name="GitHubPullRequestSearchHistory">{
+  &quot;lastFilter&quot;: {
+    &quot;state&quot;: &quot;OPEN&quot;,
+    &quot;assignee&quot;: &quot;omarse7a&quot;
+  }
+}</component>
+  <component name="GithubPullRequestsUISettings">{
+  &quot;selectedUrlAndAccountId&quot;: {
+    &quot;url&quot;: &quot;https://github.com/omarse7a/Simple-CLI.git&quot;,
+    &quot;accountId&quot;: &quot;40730db0-a6f2-4ce9-9736-c619ad96baea&quot;
+  }
+}</component>
   <component name="HighlightingSettingsPerFile">
     <setting file="file://$PROJECT_DIR$/src/main/CommandLineInterpreter.java" root0="SKIP_INSPECTION" />
     <setting file="file://$PROJECT_DIR$/src/main/Main.java" root0="SKIP_INSPECTION" />
@@ -50,6 +81,7 @@
     &quot;JUnit.CommandLineInterpreterTest.catTest.executor&quot;: &quot;Run&quot;,
     &quot;JUnit.CommandLineInterpreterTest.cdTest.executor&quot;: &quot;Run&quot;,
     &quot;JUnit.CommandLineInterpreterTest.executor&quot;: &quot;Run&quot;,
+    &quot;JUnit.CommandLineInterpreterTest.lsTest.executor&quot;: &quot;Run&quot;,
     &quot;JUnit.CommandLineInterpreterTest.mkdirTest.executor&quot;: &quot;Run&quot;,
     &quot;JUnit.CommandLineInterpreterTest.mvTest.executor&quot;: &quot;Run&quot;,
     &quot;JUnit.CommandLineInterpreterTest.pipeCommandTest.executor&quot;: &quot;Run&quot;,
@@ -59,23 +91,24 @@
     &quot;Repository.Attach.JavaDocs&quot;: &quot;false&quot;,
     &quot;Repository.Attach.Sources&quot;: &quot;false&quot;,
     &quot;RunOnceActivity.ShowReadmeOnStart&quot;: &quot;true&quot;,
+    &quot;RunOnceActivity.git.unshallow&quot;: &quot;true&quot;,
     &quot;SHARE_PROJECT_CONFIGURATION_FILES&quot;: &quot;true&quot;,
     &quot;com.intellij.testIntegration.createTest.CreateTestDialog.defaultLibrary&quot;: &quot;JUnit5&quot;,
     &quot;com.intellij.testIntegration.createTest.CreateTestDialog.defaultLibrarySuperClass.JUnit5&quot;: &quot;&quot;,
     &quot;create.test.in.the.same.root&quot;: &quot;true&quot;,
-    &quot;git-widget-placeholder&quot;: &quot;main&quot;,
+    &quot;git-widget-placeholder&quot;: &quot;refactoring&quot;,
     &quot;ignore.virus.scanning.warn.message&quot;: &quot;true&quot;,
     &quot;kotlin-language-version-configured&quot;: &quot;true&quot;,
-    &quot;last_opened_file_path&quot;: &quot;D:/Java projects/simple CLI&quot;,
+    &quot;last_opened_file_path&quot;: &quot;D:/Java projects/Concurrent-Parking-System&quot;,
     &quot;node.js.detected.package.eslint&quot;: &quot;true&quot;,
     &quot;node.js.detected.package.tslint&quot;: &quot;true&quot;,
     &quot;node.js.selected.package.eslint&quot;: &quot;(autodetect)&quot;,
     &quot;node.js.selected.package.tslint&quot;: &quot;(autodetect)&quot;,
     &quot;nodejs_package_manager_path&quot;: &quot;npm&quot;,
-    &quot;project.structure.last.edited&quot;: &quot;Modules&quot;,
+    &quot;project.structure.last.edited&quot;: &quot;SDKs&quot;,
     &quot;project.structure.proportion&quot;: &quot;0.15&quot;,
     &quot;project.structure.side.proportion&quot;: &quot;0.2&quot;,
-    &quot;settings.editor.selected.configurable&quot;: &quot;preferences.pluginManager&quot;,
+    &quot;settings.editor.selected.configurable&quot;: &quot;preferences.lookFeel&quot;,
     &quot;vue.rearranger.settings.migration&quot;: &quot;true&quot;
   }
 }</component>
@@ -87,16 +120,16 @@
       <recent name="test" />
     </key>
   </component>
-  <component name="RunManager" selected="JUnit.CommandLineInterpreterTest">
+  <component name="RunManager" selected="Application.Main">
     <configuration name="Main" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
       <option name="MAIN_CLASS_NAME" value="main.Main" />
-      <module name="simple CLI" />
+      <module name="Simple CLI" />
       <method v="2">
         <option name="Make" enabled="true" />
       </method>
     </configuration>
     <configuration name="CommandLineInterpreterTest" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
-      <module name="simple CLI" />
+      <module name="Simple CLI" />
       <extension name="coverage">
         <pattern>
           <option name="PATTERN" value="test.*" />
@@ -110,8 +143,8 @@
         <option name="Make" enabled="true" />
       </method>
     </configuration>
-    <configuration name="CommandLineInterpreterTest.catTest" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
-      <module name="simple CLI" />
+    <configuration name="CommandLineInterpreterTest.lsTest" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
+      <module name="Simple CLI" />
       <extension name="coverage">
         <pattern>
           <option name="PATTERN" value="test.*" />
@@ -120,14 +153,14 @@
       </extension>
       <option name="PACKAGE_NAME" value="test" />
       <option name="MAIN_CLASS_NAME" value="test.CommandLineInterpreterTest" />
-      <option name="METHOD_NAME" value="catTest" />
+      <option name="METHOD_NAME" value="lsTest" />
       <option name="TEST_OBJECT" value="method" />
       <method v="2">
         <option name="Make" enabled="true" />
       </method>
     </configuration>
     <configuration name="CommandLineInterpreterTest.mvTest" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
-      <module name="simple CLI" />
+      <module name="Simple CLI" />
       <extension name="coverage">
         <pattern>
           <option name="PATTERN" value="test.*" />
@@ -143,7 +176,7 @@
       </method>
     </configuration>
     <configuration name="CommandLineInterpreterTest.rmdirTest" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
-      <module name="simple CLI" />
+      <module name="Simple CLI" />
       <extension name="coverage">
         <pattern>
           <option name="PATTERN" value="test.*" />
@@ -158,21 +191,32 @@
         <option name="Make" enabled="true" />
       </method>
     </configuration>
+    <configuration default="true" type="JetRunConfigurationType">
+      <module name="Simple CLI" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <configuration default="true" type="KotlinStandaloneScriptRunConfigurationType">
+      <module name="Simple CLI" />
+      <option name="filePath" />
+      <method v="2" />
+    </configuration>
     <recent_temporary>
       <list>
-        <item itemvalue="JUnit.CommandLineInterpreterTest" />
         <item itemvalue="Application.Main" />
+        <item itemvalue="JUnit.CommandLineInterpreterTest" />
+        <item itemvalue="JUnit.CommandLineInterpreterTest.lsTest" />
         <item itemvalue="JUnit.CommandLineInterpreterTest.mvTest" />
         <item itemvalue="JUnit.CommandLineInterpreterTest.rmdirTest" />
-        <item itemvalue="JUnit.CommandLineInterpreterTest.catTest" />
       </list>
     </recent_temporary>
   </component>
   <component name="SharedIndexes">
     <attachedChunks>
       <set>
-        <option value="bundled-jdk-9823dce3aa75-28b599e66164-intellij.indexing.shared.core-IU-242.23726.103" />
-        <option value="bundled-js-predefined-d6986cc7102b-5c90d61e3bab-JavaScript-IU-242.23726.103" />
+        <option value="bundled-jdk-9823dce3aa75-125ca727e0f0-intellij.indexing.shared.core-IU-243.23654.189" />
+        <option value="bundled-js-predefined-d6986cc7102b-822845ee3bb5-JavaScript-IU-243.23654.189" />
       </set>
     </attachedChunks>
   </component>
@@ -208,10 +252,42 @@
       <workItem from="1730733238692" duration="2218000" />
       <workItem from="1730752905764" duration="3763000" />
       <workItem from="1730787872708" duration="79000" />
+      <workItem from="1730793111030" duration="202000" />
+      <workItem from="1730793330680" duration="1983000" />
+      <workItem from="1730795512930" duration="405000" />
+      <workItem from="1730797404474" duration="6000" />
+      <workItem from="1730798329578" duration="448000" />
+      <workItem from="1730803469943" duration="257000" />
+      <workItem from="1730837665584" duration="653000" />
+      <workItem from="1730892334161" duration="14000" />
+      <workItem from="1730892590056" duration="43000" />
+      <workItem from="1731088700680" duration="24000" />
+      <workItem from="1736780697057" duration="2033000" />
+      <workItem from="1736841081018" duration="2120000" />
+      <workItem from="1736854266052" duration="608000" />
+      <workItem from="1736854937359" duration="6627000" />
+      <workItem from="1737733444010" duration="541000" />
+      <workItem from="1737734003992" duration="2000" />
+      <workItem from="1737734531128" duration="800000" />
+      <workItem from="1737735376825" duration="106000" />
+      <workItem from="1737924412505" duration="2002000" />
+      <workItem from="1737927415900" duration="321000" />
+      <workItem from="1738437679761" duration="10367000" />
     </task>
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
     <option name="version" value="3" />
+  </component>
+  <component name="Vcs.Log.Tabs.Properties">
+    <option name="TAB_STATES">
+      <map>
+        <entry key="MAIN">
+          <value>
+            <State />
+          </value>
+        </entry>
+      </map>
+    </option>
   </component>
 </project>
