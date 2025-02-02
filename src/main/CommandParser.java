@@ -115,6 +115,8 @@ public class CommandParser {
         // switch on command to detect action
         switch(command){
             case "pwd": return new PwdCommand();
+            case "cd": return new CdCommand(params);
+            case "ls": return new LsCommand(params);
         }
         return null;
     }
