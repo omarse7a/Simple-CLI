@@ -4,26 +4,18 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="1146135a-4435-4a5e-b46c-bc38525c9a33" name="Changes" comment="">
+    <list default="true" id="1146135a-4435-4a5e-b46c-bc38525c9a33" name="Changes" comment="added interfaces for each type of commands, an abstract Command to encapsulate current dir, and decoupled commandline parsing in CommandParser">
       <change afterPath="$PROJECT_DIR$/src/main/CommandInterpreter.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/CommandParser.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/commands/ActionCommand.java" afterDir="false" />
       <change afterPath="$PROJECT_DIR$/src/main/commands/CdCommand.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/commands/Command.java" afterDir="false" />
       <change afterPath="$PROJECT_DIR$/src/main/commands/LsCommand.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/commands/OperatorCommand.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/commands/OutputCommand.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/commands/PwdCommand.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/libraries/junit_jupiter.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/libraries/junit_jupiter.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/misc.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/misc.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/modules.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/modules.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/uiDesigner.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/uiDesigner.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/vcs.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/vcs.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/commands/PipeCommand.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/simple CLI.iml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/CommandLineInterpreter.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/CommandLineInterpreter.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/Main.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/Main.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/test/CommandLineInterpreterTest.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/CommandLineInterpreterTest.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/CommandParser.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/CommandParser.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/commands/ActionCommand.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/commands/Command.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/commands/Command.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/commands/OperatorCommand.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/commands/OutputCommand.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/commands/OutputCommand.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/commands/PwdCommand.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/commands/PwdCommand.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -56,7 +48,7 @@
   <component name="GithubPullRequestsUISettings">{
   &quot;selectedUrlAndAccountId&quot;: {
     &quot;url&quot;: &quot;https://github.com/omarse7a/Simple-CLI.git&quot;,
-    &quot;accountId&quot;: &quot;40730db0-a6f2-4ce9-9736-c619ad96baea&quot;
+    &quot;accountId&quot;: &quot;c3f60828-1f05-484c-9486-094437234e1a&quot;
   }
 }</component>
   <component name="HighlightingSettingsPerFile">
@@ -191,17 +183,6 @@
         <option name="Make" enabled="true" />
       </method>
     </configuration>
-    <configuration default="true" type="JetRunConfigurationType">
-      <module name="Simple CLI" />
-      <method v="2">
-        <option name="Make" enabled="true" />
-      </method>
-    </configuration>
-    <configuration default="true" type="KotlinStandaloneScriptRunConfigurationType">
-      <module name="Simple CLI" />
-      <option name="filePath" />
-      <method v="2" />
-    </configuration>
     <recent_temporary>
       <list>
         <item itemvalue="Application.Main" />
@@ -272,8 +253,19 @@
       <workItem from="1737735376825" duration="106000" />
       <workItem from="1737924412505" duration="2002000" />
       <workItem from="1737927415900" duration="321000" />
-      <workItem from="1738437679761" duration="10367000" />
+      <workItem from="1738437679761" duration="10637000" />
+      <workItem from="1738490550687" duration="3107000" />
+      <workItem from="1738504634754" duration="2356000" />
     </task>
+    <task id="LOCAL-00001" summary="added interfaces for each type of commands, an abstract Command to encapsulate current dir, and decoupled commandline parsing in CommandParser">
+      <option name="closed" value="true" />
+      <created>1738448664745</created>
+      <option name="number" value="00001" />
+      <option name="presentableId" value="LOCAL-00001" />
+      <option name="project" value="LOCAL" />
+      <updated>1738448664745</updated>
+    </task>
+    <option name="localTasksCounter" value="2" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -289,5 +281,9 @@
         </entry>
       </map>
     </option>
+  </component>
+  <component name="VcsManagerConfiguration">
+    <MESSAGE value="added interfaces for each type of commands, an abstract Command to encapsulate current dir, and decoupled commandline parsing in CommandParser" />
+    <option name="LAST_COMMIT_MESSAGE" value="added interfaces for each type of commands, an abstract Command to encapsulate current dir, and decoupled commandline parsing in CommandParser" />
   </component>
 </project>
