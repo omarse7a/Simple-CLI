@@ -4,18 +4,15 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="1146135a-4435-4a5e-b46c-bc38525c9a33" name="Changes" comment="added interfaces for each type of commands, an abstract Command to encapsulate current dir, and decoupled commandline parsing in CommandParser">
+    <list default="true" id="1146135a-4435-4a5e-b46c-bc38525c9a33" name="Changes" comment="updated command structure, OutputCommand interface, and  removed unused interfaces">
       <change afterPath="$PROJECT_DIR$/src/main/CommandInterpreter.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/commands/AppendCommand.java" afterDir="false" />
       <change afterPath="$PROJECT_DIR$/src/main/commands/CdCommand.java" afterDir="false" />
       <change afterPath="$PROJECT_DIR$/src/main/commands/LsCommand.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/commands/OverwriteCommand.java" afterDir="false" />
       <change afterPath="$PROJECT_DIR$/src/main/commands/PipeCommand.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/CommandParser.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/CommandParser.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/commands/ActionCommand.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/commands/Command.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/commands/Command.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/commands/OperatorCommand.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/commands/OutputCommand.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/commands/OutputCommand.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/commands/PwdCommand.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/commands/PwdCommand.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -255,7 +252,9 @@
       <workItem from="1737927415900" duration="321000" />
       <workItem from="1738437679761" duration="10637000" />
       <workItem from="1738490550687" duration="3107000" />
-      <workItem from="1738504634754" duration="2356000" />
+      <workItem from="1738504634754" duration="2771000" />
+      <workItem from="1738509205802" duration="1350000" />
+      <workItem from="1738519427842" duration="6753000" />
     </task>
     <task id="LOCAL-00001" summary="added interfaces for each type of commands, an abstract Command to encapsulate current dir, and decoupled commandline parsing in CommandParser">
       <option name="closed" value="true" />
@@ -265,7 +264,15 @@
       <option name="project" value="LOCAL" />
       <updated>1738448664745</updated>
     </task>
-    <option name="localTasksCounter" value="2" />
+    <task id="LOCAL-00002" summary="updated command structure, OutputCommand interface, and  removed unused interfaces">
+      <option name="closed" value="true" />
+      <created>1738507378011</created>
+      <option name="number" value="00002" />
+      <option name="presentableId" value="LOCAL-00002" />
+      <option name="project" value="LOCAL" />
+      <updated>1738507378011</updated>
+    </task>
+    <option name="localTasksCounter" value="3" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -284,6 +291,7 @@
   </component>
   <component name="VcsManagerConfiguration">
     <MESSAGE value="added interfaces for each type of commands, an abstract Command to encapsulate current dir, and decoupled commandline parsing in CommandParser" />
-    <option name="LAST_COMMIT_MESSAGE" value="added interfaces for each type of commands, an abstract Command to encapsulate current dir, and decoupled commandline parsing in CommandParser" />
+    <MESSAGE value="updated command structure, OutputCommand interface, and  removed unused interfaces" />
+    <option name="LAST_COMMIT_MESSAGE" value="updated command structure, OutputCommand interface, and  removed unused interfaces" />
   </component>
 </project>

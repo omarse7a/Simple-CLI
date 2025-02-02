@@ -1,7 +1,6 @@
 package main;
 
-import main.commands.Command;
-import main.commands.PwdCommand;
+import main.commands.*;
 
 import java.util.ArrayList;
 import java.util.HashSet;
@@ -11,34 +10,62 @@ import java.util.Set;
 public class CommandParser {
     ArrayList<String> commandParts;
 
-    public CommandParser(String line) {
+    public CommandParser() {
         commandParts = new ArrayList<>();
     }
 
-    public void parse(String commandline){
+    public Command parse(String commandline){
         split(commandline);
-        ArrayList<String> operators = getOperators();
-        // handling simple commands (with no operators)
-        if(operators.isEmpty()){
-            String command = "";
-            ArrayList<String> params = new ArrayList<>();
-            for (String part : commandParts) {
-                if(isCommand(part)){
-                    command = part;
+        // handling commands (with operators)
+        String commandOp = "";
+        ArrayList<String> params = new ArrayList<>();
+        boolean hasPipe = false;
+        Command cmd = null;
+        for(int i = 0; i < commandParts.size(); i++) {
+            String part = commandParts.get(i);
+            // extracting command op code
+            if(isCommand(part)){
+                commandOp = part;
+            }
+            // handling pipes
+            else if(isPipe(part)){
+                cmd = createCommand(commandOp, params);
+                commandOp = "";
+                params.clear();
+                hasPipe = true;
+            }
+            else if(isRedirect(part)){
+                String filePath = commandParts.get(i+1);    // extracting file path
+                // handling the pipe creation
+                if(hasPipe){
+                    Command right = createCommand(commandOp, params);
+                    cmd = new PipeCommand((OutputCommand) cmd, right);
+                    commandOp = "";
+                    params.clear();
+                }
+                // redirecting a command output into a file
+                if(!commandOp.isEmpty()){
+                    cmd = createCommand(commandOp, params);
+                }
+                if(part.equals(">")){
+                    return new OverwriteCommand((OutputCommand) cmd, filePath);
                 }
                 else {
-                    params.add(removeQuotes(part));
+                    return new AppendCommand((OutputCommand) cmd, filePath);
                 }
+
             }
-            createCommand(command, params);
-            return;
-        }
-        // handling more complex commands (with operators)
-        for (String operator : operators) {
-            for (String part : commandParts) {
-                
+            // adding a parameter to parameters list
+            else {
+                params.add(removeQuotes(part));
             }
         }
+        // handling the pipe creation
+        if(hasPipe){
+            Command right = createCommand(commandOp, params);
+            return new PipeCommand((OutputCommand) cmd, right);
+        }
+        return createCommand(commandOp, params);
     }
 
     // splitting the commandline into parts
@@ -57,15 +84,13 @@ public class CommandParser {
         }
         commandParts.add(line.substring(startIndex, line.length()));    // adding the last part of the commandline
     }
-    
-    public ArrayList<String> getOperators(){
-        ArrayList<String> operators = new ArrayList<>();
-        for (String part : commandParts) {
-            if(part.equals(">") || part.equals(">>") || part.equals("|")) {
-                operators.add(part);
-            }
-        }
-        return operators;
+
+    public boolean isPipe(String component){
+        return component.equals("|");
+    }
+
+    public boolean isRedirect(String component){
+        return component.equals(">") || component.equals(">>");
     }
 
     public static boolean isCommand(String component) {
@@ -94,4 +119,3 @@ public class CommandParser {
         return null;
     }
 }
-
