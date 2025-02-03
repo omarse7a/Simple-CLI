@@ -8,7 +8,7 @@ import java.util.Scanner;
 
 // test
 // touch f1.txt
-// "..\LZW" > f1.txt
+// echo "../LZW" > f1.txt
 // cat f1.txt | cd
 
 public class Main {
@@ -20,7 +20,7 @@ public class Main {
             CommandInvoker invoker = new CommandInvoker();
             System.out.print(System.getProperty("user.name") + "$ ");
             String inputLine = scanner.nextLine();
-            Command cmd = parser.parse(inputLine);
+            Executable cmd = parser.parse(inputLine);
             invoker.invoke(cmd);
         }
     }

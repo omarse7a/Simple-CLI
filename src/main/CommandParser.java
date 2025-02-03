@@ -1,6 +1,9 @@
 package main;
 
 import main.commands.*;
+import main.operators.AppendOperator;
+import main.operators.OverwriteOperator;
+import main.operators.PipeOperator;
 
 import java.util.ArrayList;
 import java.util.HashSet;
@@ -14,13 +17,13 @@ public class CommandParser {
         commandParts = new ArrayList<>();
     }
 
-    public Command parse(String commandline){
+    public Executable parse(String commandline){
         split(commandline);
         // handling commands (with operators)
         String commandOp = "";
         ArrayList<String> params = new ArrayList<>();
         boolean hasPipe = false;
-        Command cmd = null;
+        Executable cmd = null;
         for(int i = 0; i < commandParts.size(); i++) {
             String part = commandParts.get(i);
             // extracting command op code
@@ -39,7 +42,7 @@ public class CommandParser {
                 // handling the pipe creation
                 if(hasPipe){
                     Command right = createCommand(commandOp, params);
-                    cmd = new PipeCommand((OutputCommand) cmd, right);
+                    cmd = new PipeOperator((OutputCommand) cmd, right);
                     commandOp = "";
                     params.clear();
                 }
@@ -48,12 +51,11 @@ public class CommandParser {
                     cmd = createCommand(commandOp, params);
                 }
                 if(part.equals(">")){
-                    return new OverwriteCommand((OutputCommand) cmd, filePath);
+                    return new OverwriteOperator((OutputCommand) cmd, filePath);
                 }
                 else {
-                    return new AppendCommand((OutputCommand) cmd, filePath);
+                    return new AppendOperator((OutputCommand) cmd, filePath);
                 }
-
             }
             // adding a parameter to parameters list
             else {
@@ -63,7 +65,7 @@ public class CommandParser {
         // handling the pipe creation
         if(hasPipe){
             Command right = createCommand(commandOp, params);
-            return new PipeCommand((OutputCommand) cmd, right);
+            return new PipeOperator((OutputCommand) cmd, right);
         }
         return createCommand(commandOp, params);
     }
@@ -94,7 +96,7 @@ public class CommandParser {
     }
 
     public static boolean isCommand(String component) {
-        Set<String> validCommands = new HashSet<>(Set.of("pwd", "cd", "ls", "mkdir", "rmdir", "touch", "mv", "rm", "cat")); // "exit()", "help()"
+        Set<String> validCommands = new HashSet<>(Set.of("pwd", "cd", "ls", "mkdir", "rmdir", "touch", "echo", "rm", "cat", "mv")); // "exit()", "help()"
         return validCommands.contains(component);
     }
 
@@ -117,6 +119,9 @@ public class CommandParser {
             case "pwd": return new PwdCommand();
             case "cd": return new CdCommand(params);
             case "ls": return new LsCommand(params);
+            case "touch": return new TouchCommand(params);
+            case "rm": return new RmCommand(params);
+            case "echo": return new EchoCommand(params);
         }
         return null;
     }

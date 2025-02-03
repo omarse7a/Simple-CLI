@@ -1,15 +1,19 @@
-package main.commands;
+package main.operators;
 
-public class PipeCommand extends Command{
+import main.Executable;
+import main.commands.Command;
+import main.commands.OutputCommand;
+
+public class PipeOperator implements Executable {
     private OutputCommand left;   // must return an output
     private Command right;  // takes input from left
 
-    public PipeCommand(OutputCommand l, Command r) {
+    public PipeOperator(OutputCommand l, Command r) {
         this.left = l;
         this.right = r;
     }
 
-    public PipeCommand(OutputCommand l) {
+    public PipeOperator(OutputCommand l) {
         this.left = l;
     }
 

@@ -1,22 +1,19 @@
 package main.commands;
 
-import java.io.File;
 import java.io.IOException;
 import java.nio.file.Files;
 import java.nio.file.Path;
 import java.nio.file.Paths;
-import java.util.ArrayList;
 import java.util.Collections;
 import java.util.List;
 import java.util.stream.Collectors;
 import java.util.stream.Stream;
 
 public class LsCommand extends Command implements OutputCommand {
-    // only two boolean params will be passed
     String output;
-
-    public LsCommand (List<String> params) {
-        this.params = params;
+    // maximum of two args should be passed
+    public LsCommand (List<String> args) {
+        super(args);
         output = "";
     }
 
@@ -37,8 +34,8 @@ public class LsCommand extends Command implements OutputCommand {
             options = List.of(true, true);
         }
         else{
-            options = new ArrayList<>(2);
-            System.out.println("ls: Invalid arguments");
+            System.out.println("ls: Invalid arguments.");
+            return;
         }
 
         StringBuilder list = new StringBuilder();

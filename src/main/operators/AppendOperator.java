@@ -1,14 +1,18 @@
-package main.commands;
+package main.operators;
+
+import main.Executable;
+import main.commands.OutputCommand;
 
 import java.io.IOException;
 import java.nio.file.Files;
 import java.nio.file.Path;
+import java.nio.file.Paths;
 import java.nio.file.StandardOpenOption;
 
-public class AppendCommand extends Command {
+public class AppendOperator implements Executable {
     private OutputCommand command;
     private String filePath;
-    public AppendCommand(OutputCommand cmd, String path) {
+    public AppendOperator(OutputCommand cmd, String path) {
         command = cmd;
         this.filePath = path;
     }
@@ -17,9 +21,10 @@ public class AppendCommand extends Command {
     public void execute() {
         command.execute();
         String output = command.getOutput();
-        Path path = currentDirectory.toPath().resolve(filePath).normalize();
+
+        Path path = Paths.get(filePath);
         if (!path.toFile().isFile()) {
-            System.out.println("append: File '" + path.toString() + "' does not exist");
+            System.out.println("append: File '" + path + "' does not exist");
             return;
         }
         try {
