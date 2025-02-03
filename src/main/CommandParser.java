@@ -18,6 +18,7 @@ public class CommandParser {
     }
 
     public Executable parse(String commandline){
+        commandParts = new ArrayList<>();
         split(commandline);
         // handling commands (with operators)
         String commandOp = "";
@@ -32,7 +33,7 @@ public class CommandParser {
             }
             // handling pipes
             else if(isPipe(part)){
-                cmd = createCommand(commandOp, params);
+                cmd = createCommand(commandOp, new ArrayList<>(params));
                 commandOp = "";
                 params.clear();
                 hasPipe = true;
@@ -64,10 +65,10 @@ public class CommandParser {
         }
         // handling the pipe creation
         if(hasPipe){
-            Command right = createCommand(commandOp, params);
+            Command right = createCommand(commandOp, new ArrayList<>(params));
             return new PipeOperator((OutputCommand) cmd, right);
         }
-        return createCommand(commandOp, params);
+        return createCommand(commandOp, new ArrayList<>(params));
     }
 
     // splitting the commandline into parts
@@ -96,7 +97,7 @@ public class CommandParser {
     }
 
     public static boolean isCommand(String component) {
-        Set<String> validCommands = new HashSet<>(Set.of("pwd", "cd", "ls", "mkdir", "rmdir", "touch", "echo", "rm", "cat", "mv")); // "exit()", "help()"
+        Set<String> validCommands = new HashSet<>(Set.of("pwd", "cd", "ls", "touch", "echo", "rm", "cat", "mkdir", "rmdir", "mv")); // "exit()", "help()"
         return validCommands.contains(component);
     }
 
@@ -115,14 +116,18 @@ public class CommandParser {
     // simple factory method
     public Command createCommand(String command, List<String> params) {
         // switch on command to detect action
-        switch(command){
-            case "pwd": return new PwdCommand();
-            case "cd": return new CdCommand(params);
-            case "ls": return new LsCommand(params);
-            case "touch": return new TouchCommand(params);
-            case "rm": return new RmCommand(params);
-            case "echo": return new EchoCommand(params);
-        }
-        return null;
+        return switch (command) {
+            case "pwd" -> new PwdCommand(params);
+            case "cd" -> new CdCommand(params);
+            case "ls" -> new LsCommand(params);
+            case "touch" -> new TouchCommand(params);
+            case "rm" -> new RmCommand(params);
+            case "echo" -> new EchoCommand(params);
+            case "cat" -> new CatCommand(params);
+            case "mkdir" -> new MkdirCommand(params);
+            case "rmdir" -> new RmdirCommand(params);
+            case "mv" -> new MvCommand(params);
+            default -> null;
+        };
     }
 }

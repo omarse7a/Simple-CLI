@@ -23,9 +23,15 @@ public class PipeOperator implements Executable {
 
     @Override
     public void execute() {
+        if(left == null || right == null) {
+            System.out.println("Invalid command: check help() to view available commands");
+            return;
+        }
         left.execute();
         String output = left.getOutput();
-        right.addParam(output);
-        right.execute();
+        if(!output.isEmpty()){
+            right.addParam(output);
+            right.execute();
+        }
     }
 }

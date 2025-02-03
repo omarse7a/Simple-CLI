@@ -4,22 +4,24 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="1146135a-4435-4a5e-b46c-bc38525c9a33" name="Changes" comment="Added Command Invoker and created classes for some commands (cd, ls)">
-      <change afterPath="$PROJECT_DIR$/src/main/Executable.java" afterDir="false" />
+    <list default="true" id="1146135a-4435-4a5e-b46c-bc38525c9a33" name="Changes" comment="Added an extra layer of abstraction(Executable interface) to separate operators from commands and fixed some commands">
+      <change afterPath="$PROJECT_DIR$/src/main/commands/CatCommand.java" afterDir="false" />
       <change afterPath="$PROJECT_DIR$/src/main/commands/EchoCommand.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/commands/MkdirCommand.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/commands/MvCommand.java" afterDir="false" />
       <change afterPath="$PROJECT_DIR$/src/main/commands/RmCommand.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/commands/RmdirCommand.java" afterDir="false" />
       <change afterPath="$PROJECT_DIR$/src/main/commands/TouchCommand.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/CommandInvoker.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/CommandInvoker.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/CommandLineInterpreter.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/CommandLineInterpreter.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/CommandParser.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/CommandParser.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/Main.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/Main.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/commands/AppendCommand.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/operators/AppendOperator.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/commands/CdCommand.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/commands/CdCommand.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/commands/Command.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/commands/Command.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/commands/LsCommand.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/commands/LsCommand.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/commands/OverwriteCommand.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/operators/OverwriteOperator.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/commands/PipeCommand.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/operators/PipeOperator.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/commands/OutputCommand.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/commands/OutputCommand.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/commands/PwdCommand.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/commands/PwdCommand.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/operators/AppendOperator.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/operators/AppendOperator.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/operators/OverwriteOperator.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/operators/OverwriteOperator.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/operators/PipeOperator.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/operators/PipeOperator.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -69,45 +71,45 @@
     <option name="hideEmptyMiddlePackages" value="true" />
     <option name="showLibraryContents" value="true" />
   </component>
-  <component name="PropertiesComponent"><![CDATA[{
-  "keyToString": {
-    "Application.Main.executor": "Debug",
-    "Downloaded.Files.Path.Enabled": "false",
-    "JUnit.CommandLineInterpreterTest.appendOutputTest.executor": "Run",
-    "JUnit.CommandLineInterpreterTest.catTest.executor": "Run",
-    "JUnit.CommandLineInterpreterTest.cdTest.executor": "Run",
-    "JUnit.CommandLineInterpreterTest.executor": "Run",
-    "JUnit.CommandLineInterpreterTest.lsTest.executor": "Run",
-    "JUnit.CommandLineInterpreterTest.mkdirTest.executor": "Run",
-    "JUnit.CommandLineInterpreterTest.mvTest.executor": "Run",
-    "JUnit.CommandLineInterpreterTest.pipeCommandTest.executor": "Run",
-    "JUnit.CommandLineInterpreterTest.rmdirTest.executor": "Run",
-    "JUnit.CommandLineInterpreterTest.touchTest.executor": "Run",
-    "Repository.Attach.Annotations": "false",
-    "Repository.Attach.JavaDocs": "false",
-    "Repository.Attach.Sources": "false",
-    "RunOnceActivity.ShowReadmeOnStart": "true",
-    "RunOnceActivity.git.unshallow": "true",
-    "SHARE_PROJECT_CONFIGURATION_FILES": "true",
-    "com.intellij.testIntegration.createTest.CreateTestDialog.defaultLibrary": "JUnit5",
-    "com.intellij.testIntegration.createTest.CreateTestDialog.defaultLibrarySuperClass.JUnit5": "",
-    "create.test.in.the.same.root": "true",
-    "git-widget-placeholder": "refactoring",
-    "ignore.virus.scanning.warn.message": "true",
-    "kotlin-language-version-configured": "true",
-    "last_opened_file_path": "D:/Java projects/Concurrent-Parking-System",
-    "node.js.detected.package.eslint": "true",
-    "node.js.detected.package.tslint": "true",
-    "node.js.selected.package.eslint": "(autodetect)",
-    "node.js.selected.package.tslint": "(autodetect)",
-    "nodejs_package_manager_path": "npm",
-    "project.structure.last.edited": "SDKs",
-    "project.structure.proportion": "0.15",
-    "project.structure.side.proportion": "0.2",
-    "settings.editor.selected.configurable": "preferences.lookFeel",
-    "vue.rearranger.settings.migration": "true"
+  <component name="PropertiesComponent">{
+  &quot;keyToString&quot;: {
+    &quot;Application.Main.executor&quot;: &quot;Run&quot;,
+    &quot;Downloaded.Files.Path.Enabled&quot;: &quot;false&quot;,
+    &quot;JUnit.CommandLineInterpreterTest.appendOutputTest.executor&quot;: &quot;Run&quot;,
+    &quot;JUnit.CommandLineInterpreterTest.catTest.executor&quot;: &quot;Run&quot;,
+    &quot;JUnit.CommandLineInterpreterTest.cdTest.executor&quot;: &quot;Run&quot;,
+    &quot;JUnit.CommandLineInterpreterTest.executor&quot;: &quot;Run&quot;,
+    &quot;JUnit.CommandLineInterpreterTest.lsTest.executor&quot;: &quot;Run&quot;,
+    &quot;JUnit.CommandLineInterpreterTest.mkdirTest.executor&quot;: &quot;Run&quot;,
+    &quot;JUnit.CommandLineInterpreterTest.mvTest.executor&quot;: &quot;Run&quot;,
+    &quot;JUnit.CommandLineInterpreterTest.pipeCommandTest.executor&quot;: &quot;Run&quot;,
+    &quot;JUnit.CommandLineInterpreterTest.rmdirTest.executor&quot;: &quot;Run&quot;,
+    &quot;JUnit.CommandLineInterpreterTest.touchTest.executor&quot;: &quot;Run&quot;,
+    &quot;Repository.Attach.Annotations&quot;: &quot;false&quot;,
+    &quot;Repository.Attach.JavaDocs&quot;: &quot;false&quot;,
+    &quot;Repository.Attach.Sources&quot;: &quot;false&quot;,
+    &quot;RunOnceActivity.ShowReadmeOnStart&quot;: &quot;true&quot;,
+    &quot;RunOnceActivity.git.unshallow&quot;: &quot;true&quot;,
+    &quot;SHARE_PROJECT_CONFIGURATION_FILES&quot;: &quot;true&quot;,
+    &quot;com.intellij.testIntegration.createTest.CreateTestDialog.defaultLibrary&quot;: &quot;JUnit5&quot;,
+    &quot;com.intellij.testIntegration.createTest.CreateTestDialog.defaultLibrarySuperClass.JUnit5&quot;: &quot;&quot;,
+    &quot;create.test.in.the.same.root&quot;: &quot;true&quot;,
+    &quot;git-widget-placeholder&quot;: &quot;refactoring&quot;,
+    &quot;ignore.virus.scanning.warn.message&quot;: &quot;true&quot;,
+    &quot;kotlin-language-version-configured&quot;: &quot;true&quot;,
+    &quot;last_opened_file_path&quot;: &quot;D:/Java projects/Concurrent-Parking-System&quot;,
+    &quot;node.js.detected.package.eslint&quot;: &quot;true&quot;,
+    &quot;node.js.detected.package.tslint&quot;: &quot;true&quot;,
+    &quot;node.js.selected.package.eslint&quot;: &quot;(autodetect)&quot;,
+    &quot;node.js.selected.package.tslint&quot;: &quot;(autodetect)&quot;,
+    &quot;nodejs_package_manager_path&quot;: &quot;npm&quot;,
+    &quot;project.structure.last.edited&quot;: &quot;SDKs&quot;,
+    &quot;project.structure.proportion&quot;: &quot;0.15&quot;,
+    &quot;project.structure.side.proportion&quot;: &quot;0.2&quot;,
+    &quot;settings.editor.selected.configurable&quot;: &quot;preferences.lookFeel&quot;,
+    &quot;vue.rearranger.settings.migration&quot;: &quot;true&quot;
   }
-}]]></component>
+}</component>
   <component name="RecentsManager">
     <key name="CreateTestDialog.Recents.Supers">
       <recent name="" />
@@ -264,7 +266,8 @@
       <workItem from="1738519427842" duration="7049000" />
       <workItem from="1738526798821" duration="3999000" />
       <workItem from="1738576445387" duration="1435000" />
-      <workItem from="1738584529855" duration="5371000" />
+      <workItem from="1738584529855" duration="11442000" />
+      <workItem from="1738610978679" duration="1837000" />
     </task>
     <task id="LOCAL-00001" summary="added interfaces for each type of commands, an abstract Command to encapsulate current dir, and decoupled commandline parsing in CommandParser">
       <option name="closed" value="true" />
@@ -298,7 +301,15 @@
       <option name="project" value="LOCAL" />
       <updated>1738531624437</updated>
     </task>
-    <option name="localTasksCounter" value="5" />
+    <task id="LOCAL-00005" summary="Added an extra layer of abstraction(Executable interface) to separate operators from commands and fixed some commands">
+      <option name="closed" value="true" />
+      <created>1738590245695</created>
+      <option name="number" value="00005" />
+      <option name="presentableId" value="LOCAL-00005" />
+      <option name="project" value="LOCAL" />
+      <updated>1738590245695</updated>
+    </task>
+    <option name="localTasksCounter" value="6" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -320,26 +331,7 @@
     <MESSAGE value="updated command structure, OutputCommand interface, and  removed unused interfaces" />
     <MESSAGE value="updated command parser to handle to simple and complex commands (involving operators)" />
     <MESSAGE value="Added Command Invoker and created classes for some commands (cd, ls)" />
-    <option name="LAST_COMMIT_MESSAGE" value="Added Command Invoker and created classes for some commands (cd, ls)" />
-  </component>
-  <component name="XDebuggerManager">
-    <breakpoint-manager>
-      <breakpoints>
-        <line-breakpoint enabled="true" type="java-line">
-          <url>file://$PROJECT_DIR$/src/main/CommandInvoker.java</url>
-          <line>8</line>
-          <option name="timeStamp" value="2" />
-        </line-breakpoint>
-        <line-breakpoint enabled="true" type="java-method">
-          <url>file://$PROJECT_DIR$/src/main/CommandParser.java</url>
-          <line>19</line>
-          <properties class="main.CommandParser" method="parse">
-            <option name="EMULATED" value="true" />
-            <option name="WATCH_EXIT" value="false" />
-          </properties>
-          <option name="timeStamp" value="3" />
-        </line-breakpoint>
-      </breakpoints>
-    </breakpoint-manager>
+    <MESSAGE value="Added an extra layer of abstraction(Executable interface) to separate operators from commands and fixed some commands" />
+    <option name="LAST_COMMIT_MESSAGE" value="Added an extra layer of abstraction(Executable interface) to separate operators from commands and fixed some commands" />
   </component>
 </project>

@@ -1,9 +1,11 @@
 package main.commands;
 
-public class PwdCommand extends Command implements OutputCommand {
+import java.util.List;
+
+public class PwdCommand extends OutputCommand {
     String output;
-    public PwdCommand() {
-        this.output = "";
+    public PwdCommand(List<String> args) {
+        super(args);
     }
     @Override
     public void execute() {
@@ -12,9 +14,5 @@ public class PwdCommand extends Command implements OutputCommand {
             return;
         }
         output = currentDirectory.getAbsolutePath();
-    }
-    @Override
-    public String getOutput() {
-        return output;
     }
 }

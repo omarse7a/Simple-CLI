@@ -18,8 +18,13 @@ public class OverwriteOperator implements Executable {
 
     @Override
     public void execute() {
+        if(command == null) {
+            System.out.println("Invalid command: check help() to view available commands");
+            return;
+        }
         command.execute();
         String output = command.getOutput();
+
         Path path = Paths.get(filePath);
         try {
             Files.writeString(path, output);

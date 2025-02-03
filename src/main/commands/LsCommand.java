@@ -9,12 +9,10 @@ import java.util.List;
 import java.util.stream.Collectors;
 import java.util.stream.Stream;
 
-public class LsCommand extends Command implements OutputCommand {
-    String output;
+public class LsCommand extends OutputCommand {
     // maximum of two args should be passed
     public LsCommand (List<String> args) {
         super(args);
-        output = "";
     }
 
     @Override
@@ -71,11 +69,7 @@ public class LsCommand extends Command implements OutputCommand {
         catch (IOException e){
             System.out.println("Error listing files: " + e.getMessage());
         }
-        list = new StringBuilder(list.substring(0, list.length() - 1));
+        list.deleteCharAt(list.length()-1);
         output = list.toString();
-    }
-    @Override
-    public String getOutput() {
-        return output;
     }
 }
