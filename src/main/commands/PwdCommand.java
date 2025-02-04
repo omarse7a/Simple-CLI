@@ -3,7 +3,6 @@ package main.commands;
 import java.util.List;
 
 public class PwdCommand extends OutputCommand {
-    String output;
     public PwdCommand(List<String> args) {
         super(args);
     }

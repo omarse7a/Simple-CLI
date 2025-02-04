@@ -7,6 +7,7 @@ import java.util.ArrayList;
 import java.util.List;
 
 public abstract class Command implements Executable {
+    // setting workingDirectory to the working directory at the time the application started
     protected static File currentDirectory = new File(System.getProperty("user.dir"));
     protected List<String> params;
 

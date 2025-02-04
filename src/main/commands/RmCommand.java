@@ -14,19 +14,15 @@ public class RmCommand extends Command {
             System.out.println("rm: Missing arguments.");
             return;
         }
-        if (params.size() > 1) {
-            System.out.println("rm: Too many arguments.");
-            return;
-        }
-        String target = params.getFirst();
-        File file = new File(currentDirectory + File.separator + target);
-        if (!file.exists()) {
-            System.out.println("File does not exist.");
-        }
-        else {
-            boolean isDeleted = file.delete();
-            if(isDeleted)
-                System.out.println("File deleted successfully.");
+        for(String param : params) {
+            File file = new File(currentDirectory + File.separator + param);
+            if (!file.exists()) {
+                System.out.println("File does not exist.");
+            } else {
+                boolean isDeleted = file.delete();
+                if (isDeleted)
+                    System.out.println("File deleted successfully.");
+            }
         }
     }
 }

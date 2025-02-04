@@ -7,7 +7,6 @@ import java.util.List;
 import java.util.Scanner;
 
 public class CatCommand extends OutputCommand {
-
     public CatCommand(List<String> args) {
         super(args);
     }

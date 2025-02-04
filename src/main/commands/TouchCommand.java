@@ -15,24 +15,22 @@ public class TouchCommand extends Command {
             System.out.println("touch: Missing arguments.");
             return;
         }
-        if (params.size() > 1) {
-            System.out.println("touch: Too many arguments.");
-            return;
+        for(String param : params){
+            File file = new File(currentDirectory + File.separator + param);
+            if (file.exists()) {
+                boolean isModified = file.setLastModified(System.currentTimeMillis());
+                if(isModified)
+                    System.out.println("File already exists.");
+                return;
+            }
+            try {
+                boolean isCreated = file.createNewFile();
+                if(isCreated)
+                    System.out.println("File created successfully.");
+            } catch (IOException e) {
+                System.out.println("Error creating file: " + e.getMessage());
+            }
         }
-        String target = params.getFirst();
-        File file = new File(currentDirectory + File.separator + target);
-        if (file.exists()) {
-            boolean isModified = file.setLastModified(System.currentTimeMillis());
-            if(isModified)
-                System.out.println("File already exists.");
-            return;
-        }
-        try {
-            boolean isCreated = file.createNewFile();
-            if(isCreated)
-                System.out.println("File created successfully.");
-        } catch (IOException e) {
-            System.out.println("Error creating file: " + e.getMessage());
-        }
+
     }
 }

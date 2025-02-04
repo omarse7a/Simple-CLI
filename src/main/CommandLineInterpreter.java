@@ -12,17 +12,30 @@ import java.util.stream.Collectors;
 import java.util.stream.Stream;
 
 public class CommandLineInterpreter {
-    private File currentDirectory;
-    private boolean active;
+    private CommandParser parser;
+    private CommandInvoker invoker;
 
     public CommandLineInterpreter() {
-        // setting workingDirectory to the working directory at the time the application started
-        currentDirectory = new File(System.getProperty("user.dir"));
-        active = true;
+        parser = new CommandParser();
+        invoker = new CommandInvoker();
     }
 
-    public boolean isActive() {
-        return active;
+    public void run(){
+        Scanner scanner = new Scanner(System.in);
+        while(true) {
+            System.out.print(System.getProperty("user.name") + "$ ");
+            String inputLine = scanner.nextLine().trim();
+            if(inputLine.equals("exit()")){
+                scanner.close();
+                return;
+            }
+            if(inputLine.equals("help()")) {
+                help();
+                continue;
+            }
+            Executable cmd = parser.parse(inputLine);
+            invoker.invoke(cmd);
+        }
     }
 
     public void help(){
@@ -39,9 +52,5 @@ public class CommandLineInterpreter {
         System.out.println("cat    : Concatenate files and print their contents to the screen. Usage: cat <file_name>");
         System.out.println("---------------------------------------------------");
         System.out.println("Use these commands in the CLI to manage files and directories.");
-    }
-
-    public void exit(){
-        active = false;
     }
 }

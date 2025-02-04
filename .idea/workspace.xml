@@ -4,24 +4,17 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="1146135a-4435-4a5e-b46c-bc38525c9a33" name="Changes" comment="Added an extra layer of abstraction(Executable interface) to separate operators from commands and fixed some commands">
-      <change afterPath="$PROJECT_DIR$/src/main/commands/CatCommand.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/commands/EchoCommand.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/commands/MkdirCommand.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/commands/MvCommand.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/commands/RmCommand.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/commands/RmdirCommand.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/commands/TouchCommand.java" afterDir="false" />
+    <list default="true" id="1146135a-4435-4a5e-b46c-bc38525c9a33" name="Changes" comment="Removed each command and operator from CommandLineInterpreter class into their own class">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/README.md" beforeDir="false" afterPath="$PROJECT_DIR$/README.md" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/CommandLineInterpreter.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/CommandLineInterpreter.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/CommandParser.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/CommandParser.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/Main.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/Main.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/commands/LsCommand.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/commands/LsCommand.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/commands/OutputCommand.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/commands/OutputCommand.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/commands/CatCommand.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/commands/CatCommand.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/commands/Command.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/commands/Command.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/commands/PwdCommand.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/commands/PwdCommand.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/operators/AppendOperator.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/operators/AppendOperator.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/operators/OverwriteOperator.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/operators/OverwriteOperator.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/operators/PipeOperator.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/operators/PipeOperator.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/commands/RmCommand.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/commands/RmCommand.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/commands/TouchCommand.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/commands/TouchCommand.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/test/CommandLineInterpreterTest.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/CommandLineInterpreterTest.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -267,7 +260,8 @@
       <workItem from="1738526798821" duration="3999000" />
       <workItem from="1738576445387" duration="1435000" />
       <workItem from="1738584529855" duration="11442000" />
-      <workItem from="1738610978679" duration="1837000" />
+      <workItem from="1738610978679" duration="3508000" />
+      <workItem from="1738659908984" duration="2406000" />
     </task>
     <task id="LOCAL-00001" summary="added interfaces for each type of commands, an abstract Command to encapsulate current dir, and decoupled commandline parsing in CommandParser">
       <option name="closed" value="true" />
@@ -309,7 +303,15 @@
       <option name="project" value="LOCAL" />
       <updated>1738590245695</updated>
     </task>
-    <option name="localTasksCounter" value="6" />
+    <task id="LOCAL-00006" summary="Removed each command and operator from CommandLineInterpreter class into their own class">
+      <option name="closed" value="true" />
+      <created>1738612931567</created>
+      <option name="number" value="00006" />
+      <option name="presentableId" value="LOCAL-00006" />
+      <option name="project" value="LOCAL" />
+      <updated>1738612931567</updated>
+    </task>
+    <option name="localTasksCounter" value="7" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -332,6 +334,7 @@
     <MESSAGE value="updated command parser to handle to simple and complex commands (involving operators)" />
     <MESSAGE value="Added Command Invoker and created classes for some commands (cd, ls)" />
     <MESSAGE value="Added an extra layer of abstraction(Executable interface) to separate operators from commands and fixed some commands" />
-    <option name="LAST_COMMIT_MESSAGE" value="Added an extra layer of abstraction(Executable interface) to separate operators from commands and fixed some commands" />
+    <MESSAGE value="Removed each command and operator from CommandLineInterpreter class into their own class" />
+    <option name="LAST_COMMIT_MESSAGE" value="Removed each command and operator from CommandLineInterpreter class into their own class" />
   </component>
 </project>
