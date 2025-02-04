@@ -4,12 +4,16 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="1146135a-4435-4a5e-b46c-bc38525c9a33" name="Changes" comment="">
+    <list default="true" id="1146135a-4435-4a5e-b46c-bc38525c9a33" name="Changes" comment="Removed each command and operator from CommandLineInterpreter class into their own class">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/folder1/f1.txt" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/folder1/f2.txt" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/README.md" beforeDir="false" afterPath="$PROJECT_DIR$/README.md" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/CommandLineInterpreter.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/CommandLineInterpreter.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/Main.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/Main.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/commands/CatCommand.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/commands/CatCommand.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/commands/Command.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/commands/Command.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/commands/PwdCommand.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/commands/PwdCommand.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/commands/RmCommand.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/commands/RmCommand.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/commands/TouchCommand.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/commands/TouchCommand.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/test/CommandLineInterpreterTest.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/CommandLineInterpreterTest.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
@@ -20,14 +24,32 @@
   <component name="FileTemplateManagerImpl">
     <option name="RECENT_TEMPLATES">
       <list>
-        <option value="Class" />
         <option value="JUnit5 Test Class" />
+        <option value="Interface" />
+        <option value="Class" />
       </list>
     </option>
   </component>
   <component name="Git.Settings">
+    <option name="RECENT_BRANCH_BY_REPOSITORY">
+      <map>
+        <entry key="$PROJECT_DIR$" value="main" />
+      </map>
+    </option>
     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
   </component>
+  <component name="GitHubPullRequestSearchHistory">{
+  &quot;lastFilter&quot;: {
+    &quot;state&quot;: &quot;OPEN&quot;,
+    &quot;assignee&quot;: &quot;omarse7a&quot;
+  }
+}</component>
+  <component name="GithubPullRequestsUISettings">{
+  &quot;selectedUrlAndAccountId&quot;: {
+    &quot;url&quot;: &quot;https://github.com/omarse7a/Simple-CLI.git&quot;,
+    &quot;accountId&quot;: &quot;c3f60828-1f05-484c-9486-094437234e1a&quot;
+  }
+}</component>
   <component name="HighlightingSettingsPerFile">
     <setting file="file://$PROJECT_DIR$/src/main/CommandLineInterpreter.java" root0="SKIP_INSPECTION" />
     <setting file="file://$PROJECT_DIR$/src/main/Main.java" root0="SKIP_INSPECTION" />
@@ -50,6 +72,7 @@
     &quot;JUnit.CommandLineInterpreterTest.catTest.executor&quot;: &quot;Run&quot;,
     &quot;JUnit.CommandLineInterpreterTest.cdTest.executor&quot;: &quot;Run&quot;,
     &quot;JUnit.CommandLineInterpreterTest.executor&quot;: &quot;Run&quot;,
+    &quot;JUnit.CommandLineInterpreterTest.lsTest.executor&quot;: &quot;Run&quot;,
     &quot;JUnit.CommandLineInterpreterTest.mkdirTest.executor&quot;: &quot;Run&quot;,
     &quot;JUnit.CommandLineInterpreterTest.mvTest.executor&quot;: &quot;Run&quot;,
     &quot;JUnit.CommandLineInterpreterTest.pipeCommandTest.executor&quot;: &quot;Run&quot;,
@@ -59,23 +82,24 @@
     &quot;Repository.Attach.JavaDocs&quot;: &quot;false&quot;,
     &quot;Repository.Attach.Sources&quot;: &quot;false&quot;,
     &quot;RunOnceActivity.ShowReadmeOnStart&quot;: &quot;true&quot;,
+    &quot;RunOnceActivity.git.unshallow&quot;: &quot;true&quot;,
     &quot;SHARE_PROJECT_CONFIGURATION_FILES&quot;: &quot;true&quot;,
     &quot;com.intellij.testIntegration.createTest.CreateTestDialog.defaultLibrary&quot;: &quot;JUnit5&quot;,
     &quot;com.intellij.testIntegration.createTest.CreateTestDialog.defaultLibrarySuperClass.JUnit5&quot;: &quot;&quot;,
     &quot;create.test.in.the.same.root&quot;: &quot;true&quot;,
-    &quot;git-widget-placeholder&quot;: &quot;main&quot;,
+    &quot;git-widget-placeholder&quot;: &quot;refactoring&quot;,
     &quot;ignore.virus.scanning.warn.message&quot;: &quot;true&quot;,
     &quot;kotlin-language-version-configured&quot;: &quot;true&quot;,
-    &quot;last_opened_file_path&quot;: &quot;D:/Java projects/simple CLI&quot;,
+    &quot;last_opened_file_path&quot;: &quot;D:/Java projects/Concurrent-Parking-System&quot;,
     &quot;node.js.detected.package.eslint&quot;: &quot;true&quot;,
     &quot;node.js.detected.package.tslint&quot;: &quot;true&quot;,
     &quot;node.js.selected.package.eslint&quot;: &quot;(autodetect)&quot;,
     &quot;node.js.selected.package.tslint&quot;: &quot;(autodetect)&quot;,
     &quot;nodejs_package_manager_path&quot;: &quot;npm&quot;,
-    &quot;project.structure.last.edited&quot;: &quot;Modules&quot;,
+    &quot;project.structure.last.edited&quot;: &quot;SDKs&quot;,
     &quot;project.structure.proportion&quot;: &quot;0.15&quot;,
     &quot;project.structure.side.proportion&quot;: &quot;0.2&quot;,
-    &quot;settings.editor.selected.configurable&quot;: &quot;preferences.pluginManager&quot;,
+    &quot;settings.editor.selected.configurable&quot;: &quot;preferences.lookFeel&quot;,
     &quot;vue.rearranger.settings.migration&quot;: &quot;true&quot;
   }
 }</component>
@@ -87,16 +111,16 @@
       <recent name="test" />
     </key>
   </component>
-  <component name="RunManager" selected="JUnit.CommandLineInterpreterTest">
+  <component name="RunManager" selected="Application.Main">
     <configuration name="Main" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
       <option name="MAIN_CLASS_NAME" value="main.Main" />
-      <module name="simple CLI" />
+      <module name="Simple CLI" />
       <method v="2">
         <option name="Make" enabled="true" />
       </method>
     </configuration>
     <configuration name="CommandLineInterpreterTest" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
-      <module name="simple CLI" />
+      <module name="Simple CLI" />
       <extension name="coverage">
         <pattern>
           <option name="PATTERN" value="test.*" />
@@ -110,8 +134,8 @@
         <option name="Make" enabled="true" />
       </method>
     </configuration>
-    <configuration name="CommandLineInterpreterTest.catTest" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
-      <module name="simple CLI" />
+    <configuration name="CommandLineInterpreterTest.lsTest" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
+      <module name="Simple CLI" />
       <extension name="coverage">
         <pattern>
           <option name="PATTERN" value="test.*" />
@@ -120,14 +144,14 @@
       </extension>
       <option name="PACKAGE_NAME" value="test" />
       <option name="MAIN_CLASS_NAME" value="test.CommandLineInterpreterTest" />
-      <option name="METHOD_NAME" value="catTest" />
+      <option name="METHOD_NAME" value="lsTest" />
       <option name="TEST_OBJECT" value="method" />
       <method v="2">
         <option name="Make" enabled="true" />
       </method>
     </configuration>
     <configuration name="CommandLineInterpreterTest.mvTest" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
-      <module name="simple CLI" />
+      <module name="Simple CLI" />
       <extension name="coverage">
         <pattern>
           <option name="PATTERN" value="test.*" />
@@ -143,7 +167,7 @@
       </method>
     </configuration>
     <configuration name="CommandLineInterpreterTest.rmdirTest" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
-      <module name="simple CLI" />
+      <module name="Simple CLI" />
       <extension name="coverage">
         <pattern>
           <option name="PATTERN" value="test.*" />
@@ -160,19 +184,19 @@
     </configuration>
     <recent_temporary>
       <list>
-        <item itemvalue="JUnit.CommandLineInterpreterTest" />
         <item itemvalue="Application.Main" />
+        <item itemvalue="JUnit.CommandLineInterpreterTest" />
+        <item itemvalue="JUnit.CommandLineInterpreterTest.lsTest" />
         <item itemvalue="JUnit.CommandLineInterpreterTest.mvTest" />
         <item itemvalue="JUnit.CommandLineInterpreterTest.rmdirTest" />
-        <item itemvalue="JUnit.CommandLineInterpreterTest.catTest" />
       </list>
     </recent_temporary>
   </component>
   <component name="SharedIndexes">
     <attachedChunks>
       <set>
-        <option value="bundled-jdk-9823dce3aa75-28b599e66164-intellij.indexing.shared.core-IU-242.23726.103" />
-        <option value="bundled-js-predefined-d6986cc7102b-5c90d61e3bab-JavaScript-IU-242.23726.103" />
+        <option value="bundled-jdk-9823dce3aa75-125ca727e0f0-intellij.indexing.shared.core-IU-243.23654.189" />
+        <option value="bundled-js-predefined-d6986cc7102b-822845ee3bb5-JavaScript-IU-243.23654.189" />
       </set>
     </attachedChunks>
   </component>
@@ -208,10 +232,109 @@
       <workItem from="1730733238692" duration="2218000" />
       <workItem from="1730752905764" duration="3763000" />
       <workItem from="1730787872708" duration="79000" />
+      <workItem from="1730793111030" duration="202000" />
+      <workItem from="1730793330680" duration="1983000" />
+      <workItem from="1730795512930" duration="405000" />
+      <workItem from="1730797404474" duration="6000" />
+      <workItem from="1730798329578" duration="448000" />
+      <workItem from="1730803469943" duration="257000" />
+      <workItem from="1730837665584" duration="653000" />
+      <workItem from="1730892334161" duration="14000" />
+      <workItem from="1730892590056" duration="43000" />
+      <workItem from="1731088700680" duration="24000" />
+      <workItem from="1736780697057" duration="2033000" />
+      <workItem from="1736841081018" duration="2120000" />
+      <workItem from="1736854266052" duration="608000" />
+      <workItem from="1736854937359" duration="6627000" />
+      <workItem from="1737733444010" duration="541000" />
+      <workItem from="1737734003992" duration="2000" />
+      <workItem from="1737734531128" duration="800000" />
+      <workItem from="1737735376825" duration="106000" />
+      <workItem from="1737924412505" duration="2002000" />
+      <workItem from="1737927415900" duration="321000" />
+      <workItem from="1738437679761" duration="10637000" />
+      <workItem from="1738490550687" duration="3107000" />
+      <workItem from="1738504634754" duration="2771000" />
+      <workItem from="1738509205802" duration="1350000" />
+      <workItem from="1738519427842" duration="7049000" />
+      <workItem from="1738526798821" duration="3999000" />
+      <workItem from="1738576445387" duration="1435000" />
+      <workItem from="1738584529855" duration="11442000" />
+      <workItem from="1738610978679" duration="3508000" />
+      <workItem from="1738659908984" duration="2406000" />
     </task>
+    <task id="LOCAL-00001" summary="added interfaces for each type of commands, an abstract Command to encapsulate current dir, and decoupled commandline parsing in CommandParser">
+      <option name="closed" value="true" />
+      <created>1738448664745</created>
+      <option name="number" value="00001" />
+      <option name="presentableId" value="LOCAL-00001" />
+      <option name="project" value="LOCAL" />
+      <updated>1738448664745</updated>
+    </task>
+    <task id="LOCAL-00002" summary="updated command structure, OutputCommand interface, and  removed unused interfaces">
+      <option name="closed" value="true" />
+      <created>1738507378011</created>
+      <option name="number" value="00002" />
+      <option name="presentableId" value="LOCAL-00002" />
+      <option name="project" value="LOCAL" />
+      <updated>1738507378011</updated>
+    </task>
+    <task id="LOCAL-00003" summary="updated command parser to handle to simple and complex commands (involving operators)">
+      <option name="closed" value="true" />
+      <created>1738526709858</created>
+      <option name="number" value="00003" />
+      <option name="presentableId" value="LOCAL-00003" />
+      <option name="project" value="LOCAL" />
+      <updated>1738526709858</updated>
+    </task>
+    <task id="LOCAL-00004" summary="Added Command Invoker and created classes for some commands (cd, ls)">
+      <option name="closed" value="true" />
+      <created>1738531624437</created>
+      <option name="number" value="00004" />
+      <option name="presentableId" value="LOCAL-00004" />
+      <option name="project" value="LOCAL" />
+      <updated>1738531624437</updated>
+    </task>
+    <task id="LOCAL-00005" summary="Added an extra layer of abstraction(Executable interface) to separate operators from commands and fixed some commands">
+      <option name="closed" value="true" />
+      <created>1738590245695</created>
+      <option name="number" value="00005" />
+      <option name="presentableId" value="LOCAL-00005" />
+      <option name="project" value="LOCAL" />
+      <updated>1738590245695</updated>
+    </task>
+    <task id="LOCAL-00006" summary="Removed each command and operator from CommandLineInterpreter class into their own class">
+      <option name="closed" value="true" />
+      <created>1738612931567</created>
+      <option name="number" value="00006" />
+      <option name="presentableId" value="LOCAL-00006" />
+      <option name="project" value="LOCAL" />
+      <updated>1738612931567</updated>
+    </task>
+    <option name="localTasksCounter" value="7" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
     <option name="version" value="3" />
+  </component>
+  <component name="Vcs.Log.Tabs.Properties">
+    <option name="TAB_STATES">
+      <map>
+        <entry key="MAIN">
+          <value>
+            <State />
+          </value>
+        </entry>
+      </map>
+    </option>
+  </component>
+  <component name="VcsManagerConfiguration">
+    <MESSAGE value="added interfaces for each type of commands, an abstract Command to encapsulate current dir, and decoupled commandline parsing in CommandParser" />
+    <MESSAGE value="updated command structure, OutputCommand interface, and  removed unused interfaces" />
+    <MESSAGE value="updated command parser to handle to simple and complex commands (involving operators)" />
+    <MESSAGE value="Added Command Invoker and created classes for some commands (cd, ls)" />
+    <MESSAGE value="Added an extra layer of abstraction(Executable interface) to separate operators from commands and fixed some commands" />
+    <MESSAGE value="Removed each command and operator from CommandLineInterpreter class into their own class" />
+    <option name="LAST_COMMIT_MESSAGE" value="Removed each command and operator from CommandLineInterpreter class into their own class" />
   </component>
 </project>

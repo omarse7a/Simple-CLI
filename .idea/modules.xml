@@ -2,7 +2,7 @@
 <project version="4">
   <component name="ProjectModuleManager">
     <modules>
-      <module fileurl="file://$PROJECT_DIR$/simple CLI.iml" filepath="$PROJECT_DIR$/simple CLI.iml" />
+      <module fileurl="file://$PROJECT_DIR$/Simple CLI.iml" filepath="$PROJECT_DIR$/Simple CLI.iml" />
     </modules>
   </component>
 </project>
